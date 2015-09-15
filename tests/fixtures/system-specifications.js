@@ -1,6 +1,6 @@
 var systems = [
   {
-    name: 'algae',
+    name: 'Algae',
     initialState: 'A',
     rules: {
       A: 'AB',
@@ -15,6 +15,21 @@ var systems = [
       'ABAABABAABAAB',
       'ABAABABAABAABABAABABA',
       'ABAABABAABAABABAABABAABAABABAABAAB'
+    ]
+  },
+  {
+    name: 'Pythogoras Tree',
+    initialState: '0',
+    constants: '[,]',
+    rules: {
+      '0': '1[0]0',
+      '1': '11'
+    },
+    expectedStates: [
+      '0',
+      '1[0]0',
+      '11[1[0]0]1[0]0',
+      '1111[11[1[0]0]1[0]0]11[1[0]0]1[0]0'
     ]
   }
 ];

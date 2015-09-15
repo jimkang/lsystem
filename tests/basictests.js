@@ -7,7 +7,9 @@ systems.forEach(runTest);
 
 function runTest(systemSpec) {
   test(`${systemSpec.name} test`, function systemTest(t) {
-    var lsys = LSystem(_.pick(systemSpec, 'initialState', 'rules'));
+    var lsys = LSystem(
+      _.pick(systemSpec, 'initialState', 'rules', 'constants')
+    );
     
     systemSpec.expectedStates.forEach(testIteration);
 

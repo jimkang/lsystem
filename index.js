@@ -11,6 +11,7 @@ function LSystem(opts) {
 
   var n = 0;
   var state = initialState;
+  addRulesForConstants(constants, rules);
 
   function getIteration() {
     return n;
@@ -35,6 +36,18 @@ function LSystem(opts) {
     getState: getState,
     advance: advance
   };
+}
+
+function addIdentityRuleForConstant(k, rules) {
+  rules[k] = k;
+}
+
+function addRulesForConstants(constants, rules) {
+  if (constants) {
+    for (let k of constants) {
+      addIdentityRuleForConstant(k, rules);
+    }
+  }
 }
 
 module.exports = LSystem;
