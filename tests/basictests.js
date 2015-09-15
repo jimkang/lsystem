@@ -1,23 +1,26 @@
 var test = require('tape');
 var LSystem = require('../index');
-var algaeSystem = require('./fixtures/algae-system');
 var _ = require('lodash');
+var systems = require('./fixtures/system-specifications');
 
-test('Algae test', function algae(t) {
-  var lsys = LSystem(_.pick(algaeSystem, 'initialState', 'rules'));
-  
-  algaeSystem.expectedStates.forEach(testIteration);
+systems.forEach(runTest);
 
-  function testIteration(expectedState, i) {
-    t.equal(lsys.getIteration(), 0, `Reports it is on iteration ${i}.`);
-    t.equal(
-      lsys.getState(), expectedState, `State is correct for iteration ${i}.`
-    );
-    lsys.advance();
-  }
+function runTest(systemSpec) {
+  test(`${systemSpec.name} test`, function systemTest(t) {
+    var lsys = LSystem(_.pick(systemSpec, 'initialState', 'rules'));
+    
+    systemSpec.expectedStates.forEach(testIteration);
 
-  t.end();
-});
+    function testIteration(expectedState, i) {
+      t.equal(lsys.getIteration(), 0, `Reports it is on iteration ${i}.`);
+      t.equal(
+        lsys.getState(), expectedState, `State is correct for iteration ${i}.`
+      );
+      lsys.advance();
+    }
 
+    t.end();
+  });
+}
 
 // TODO: Stochastic L-system with function-based rules.
