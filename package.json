@@ -1,7 +1,7 @@
 {
   "name": "lsystem",
   "version": "1.0.0",
-  "description": "Does some cool things.",
+  "description": "A module that lets you create L-systems, which will take rules, then use those rules to transform strings into other strings.",
   "main": "index.js",
   "scripts": {
     "test": "make test"
@@ -10,7 +10,11 @@
     "type": "git",
     "url": "git@github.com:jimkang/lsystem.git"
   },
-  "keywords": [],
+  "keywords": [
+    "l-system",
+    "lsystem",
+    "grammar"
+  ],
   "author": "Jim Kang",
   "license": "MIT",
   "bugs": {
