@@ -15,7 +15,6 @@ Usage
 
     var LSystem = require('lsystem');
     var lsys = LSystem({
-      variables: ['A', 'B'],
       initialState: 'A',
       rules: {
         A: 'AB',
@@ -23,7 +22,39 @@ Usage
       }
     });
 
-    lsys.
+    for (let i = 0; i < 5; ++i) {
+      console.log(lsys.advance());
+    }
+
+Output:
+
+    AB
+    ABA
+    ABAAB
+    ABAABABA
+    ABAABABAABAAB
+
+API
+---
+
+**LSystem**
+
+Creates an L-system. Opts:
+
+  **initialState**: A string containing the symbols in the initial state of the system.
+  **rules**: A dictionary mapping symbols to a string of symbols that they should produce. e.g. `A: 'AB'` indicates that when the system advances, instances of the symbol 'A' should become 'AB' in the next iteration.
+
+**advance**
+
+Advances the system one iteration. Applies the rules to the current state and updates the state. Returns the state.
+
+**getState**
+
+Gets the current state of the L-system, which is a string. e.g. 'ABAABABA'.
+
+**getIteration**
+
+Get the current iteration number.
 
 Tests
 -----

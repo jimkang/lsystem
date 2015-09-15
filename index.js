@@ -1,3 +1,5 @@
+'use strict';
+
 function LSystem(opts) {
   var {
     variables,
@@ -19,7 +21,13 @@ function LSystem(opts) {
   }
 
   function advance() {
-    
+    let nextState = '';
+    for (let symbol of state) {
+      let result = rules[symbol];
+      nextState += result;
+    }
+    state = nextState;
+    return nextState;
   }
 
   return {

@@ -11,6 +11,7 @@ var expectedAlgaeStates = [
   'ABAABABAABAABABAABABA',
   'ABAABABAABAABABAABABAABAABABAABAAB'
 ];
+Object.freeze(expectedAlgaeStates);
 
 test('Algae test', function algae(t) {
   var lsys = LSystem({
