@@ -13,6 +13,8 @@ Installation
 Usage
 -----
 
+`example.js`:
+
     var LSystem = require('lsystem');
     var lsys = LSystem({
       initialState: 'A',
@@ -25,6 +27,10 @@ Usage
     for (let i = 0; i < 5; ++i) {
       console.log(lsys.advance());
     }
+
+Execution:
+
+    node --harmony_destructuring example.js
 
 Output:
 
@@ -41,8 +47,8 @@ API
 
 Creates an L-system. Opts:
 
-  **initialState**: A string containing the symbols in the initial state of the system.
-  **rules**: A dictionary mapping symbols to a string of symbols that they should produce. e.g. `A: 'AB'` indicates that when the system advances, instances of the symbol 'A' should become 'AB' in the next iteration.
+  - **initialState**: A string containing the symbols in the initial state of the system.
+  - **rules**: A dictionary mapping symbols to a string of symbols that they should produce. e.g. `A: 'AB'` indicates that when the system advances, instances of the symbol 'A' should become 'AB' in the next iteration.
 
 **advance**
 
