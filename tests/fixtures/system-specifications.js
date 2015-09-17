@@ -63,6 +63,20 @@ var systems = [
       'F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+' +
       'F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F'
     ]
+  },
+  {
+    name: 'Sierpinski triangle',
+    initialState: 'A',
+    constants: '+-',
+    rules: {
+      A: '+B-A-B+',
+      B: '-A+B+A-'
+    },
+    expectedStates: [
+      'A',
+      '+B-A-B+',
+      '+-A+B+A--+B-A-B+--A+B+A-+'
+    ]
   }
 ];
 
