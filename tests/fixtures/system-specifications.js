@@ -45,6 +45,24 @@ var systems = [
       'ABABBBABA',
       'ABABBBABABBBBBBBBBABABBBABA'
     ]
+  },
+  {
+    name: 'Koch curve',
+    initialState: 'F',
+    constants: '+-',
+    rules: {
+      'F': 'F+F-F-F+F'
+    },
+    expectedStates: [
+      'F',
+      'F+F-F-F+F',
+      'F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F',
+      'F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+' +
+      'F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-' +
+      'F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F-' +
+      'F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F+' +
+      'F+F-F-F+F+F+F-F-F+F-F+F-F-F+F-F+F-F-F+F+F+F-F-F+F'
+    ]
   }
 ];
 
