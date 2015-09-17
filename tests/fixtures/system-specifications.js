@@ -31,6 +31,20 @@ var systems = [
       '11[1[0]0]1[0]0',
       '1111[11[1[0]0]1[0]0]11[1[0]0]1[0]0'
     ]
+  },
+  {
+    name: 'Cantor set',
+    initialState: 'A',
+    rules: {
+      'A': 'ABA',
+      'B': 'BBB'
+    },
+    expectedStates: [
+      'A',
+      'ABA',
+      'ABABBBABA',
+      'ABABBBABABBBBBBBBBABABBBABA'
+    ]
   }
 ];
 
