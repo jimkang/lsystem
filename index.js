@@ -1,13 +1,15 @@
-'use strict';
-
 function LSystem(opts) {
-  var {
-    variables,
-    constants,
-    initialState,
-    rules
+  var variables;
+  var constants;
+  var initialState;
+  var rules;
+
+  if (opts) {
+    variables = opts.variables;
+    constants = opts.constants;
+    initialState = opts.initialState;
+    rules = opts.rules;    
   }
-  = opts;
 
   var n = 0;
   var state = initialState;
@@ -22,9 +24,13 @@ function LSystem(opts) {
   }
 
   function advance() {
-    let nextState = '';
-    for (let symbol of state) {
-      let result = rules[symbol];
+    var nextState = '';
+    var symbol;
+    var result;
+
+    for (var i = 0; i < state.length; ++i) {
+      symbol = state.charAt(i);
+      result = rules[symbol];
       nextState += result;
     }
     state = nextState;
@@ -44,7 +50,9 @@ function addIdentityRuleForConstant(k, rules) {
 
 function addRulesForConstants(constants, rules) {
   if (constants) {
-    for (let k of constants) {
+    var k;
+    for (var i = 0; i < constants.length; ++i) {
+      k = constants.charAt(i);
       addIdentityRuleForConstant(k, rules);
     }
   }
