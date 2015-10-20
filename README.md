@@ -3,7 +3,7 @@ lsystem
 
 A module that lets you create [L-systems](https://en.wikipedia.org/wiki/L-system), which will take rules, then use those rules to transform strings into other strings.
 
-For Node v4.0.0. and the browser (via Browserify and Babelify). On Node, requires that you run it with the ` --harmony_destructuring` or `--es_staging` switch. (Dag! I know, right? *Maybe* I'll backport it to ES5 later.)
+For Node v4.0.0. and the browser (via Browserify and Babelify). On Node, requires that you run it with the ` --harmony_destructuring` or `--es_staging` switch. In the browser, `require('lsystem/browser-index')` instead of just `require('lsystem')`. (Dag! I know, right? *Maybe* I'll backport it to ES5 later.)
 
 Installation
 ------------
