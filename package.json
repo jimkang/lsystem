@@ -22,11 +22,8 @@
   },
   "homepage": "https://github.com/jimkang/lsystem",
   "devDependencies": {
-    "babelify": "^6.3.0",
-    "browserify": "^11.2.0",
-    "tape": "^3.0.3"
+    "lodash.pick": "^4.4.0",
+    "tape": "^4.9.1"
   },
-  "dependencies": {
-    "lodash": "^3.10.1"
-  }
+  "dependencies": {}
 }

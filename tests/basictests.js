@@ -1,6 +1,6 @@
 var test = require('tape');
 var LSystem = require('../index');
-var _ = require('lodash');
+var pick = require('lodash.pick');
 var systems = require('./fixtures/system-specifications');
 
 systems.forEach(runTest);
@@ -8,7 +8,7 @@ systems.forEach(runTest);
 function runTest(systemSpec) {
   test(`${systemSpec.name} test`, function systemTest(t) {
     var lsys = LSystem(
-      _.pick(systemSpec, 'initialState', 'rules', 'constants')
+      pick(systemSpec, 'initialState', 'rules', 'constants')
     );
     
     systemSpec.expectedStates.forEach(testIteration);
